@@ -1,0 +1,6 @@
+pandas==2.2.3
+nltk==3.9.1
+scikit-learn==1.5.2
+spacy==3.8.3
+textblob==0.18.0.post0
+imbalanced-learn==0.12.4
