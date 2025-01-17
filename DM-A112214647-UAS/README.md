@@ -2,7 +2,7 @@
 ## NIM  : A11.2022.14647
 ## Kelas: A11-4504
 
-# Proyek Klasifikasi Sentimen Ulasan Google Play - Genshin Impact
+# Proyek Analisis Penyebab Rating Rendah dan Tinggi pada Ulasan Pengguna Game Genshin Impact di Google Play Store
 
 Repositori ini mengintegrasikan tiga langkah utama untuk mengumpulkan, memproses, dan menganalisis ulasan aplikasi dari Google Play Store. Proyek ini difokuskan pada ulasan aplikasi "Genshin Impact" dengan tujuan untuk mengklasifikasikan sentimen pengguna berdasarkan ulasan yang diberikan, serta untuk mengeksplorasi metode analisis sentimen menggunakan pembelajaran mesin.
 
