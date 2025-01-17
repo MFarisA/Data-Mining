@@ -174,9 +174,3 @@ python-dotenv
    - Jalankan `analysis.ipynb` untuk melakukan analisis sentimen menggunakan model SVM dan mengevaluasi kinerjanya.
 
 ---
-
-# Download README.md
-
-Saya telah menyelesaikan pembaruan README.md yang lebih lengkap. Anda dapat mengunduhnya melalui tautan di bawah ini:
-
-[Download README.md](sandbox:/mnt/data/README_extended_final.md)
