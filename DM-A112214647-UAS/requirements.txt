@@ -1,0 +1,10 @@
+pandas
+scikit-learn
+imblearn
+spacy
+textblob
+matplotlib
+seaborn
+wordcloud
+serpapi
+python-dotenv
