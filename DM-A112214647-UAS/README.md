@@ -1,3 +1,6 @@
+## Nama : Muhammad Faris Assami
+## NIM  : A11.2022.14647
+## Kelas: A11-4504
 
 # Proyek Klasifikasi Sentimen Ulasan Google Play - Genshin Impact
 
