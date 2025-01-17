@@ -4,7 +4,21 @@
 
 # Proyek Analisis Penyebab Rating Rendah dan Tinggi pada Ulasan Pengguna Game Genshin Impact di Google Play Store
 
-Repositori ini mengintegrasikan tiga langkah utama untuk mengumpulkan, memproses, dan menganalisis ulasan aplikasi dari Google Play Store. Proyek ini difokuskan pada ulasan aplikasi "Genshin Impact" dengan tujuan untuk mengklasifikasikan sentimen pengguna berdasarkan ulasan yang diberikan, serta untuk mengeksplorasi metode analisis sentimen menggunakan pembelajaran mesin.
+**Judul Proyek**: Analisis Penyebab Rating Rendah dan Tinggi pada Ulasan Pengguna Game Genshin Impact di Google Play Store
+
+**Deskripsi Singkat**: Proyek ini bertujuan untuk menganalisis ulasan pengguna game "Genshin Impact" di Google Play Store, dengan fokus pada mengidentifikasi faktor-faktor yang menyebabkan rating rendah (1-2 bintang) dan tinggi (3-5 bintang).
+
+## Ringkasan dan Permasalahan
+
+### Ringkasan:
+Eksperimen ini bertujuan untuk mengidentifikasi faktor-faktor yang menyebabkan rating rendah (1-2 bintang) dan tinggi (3-5 bintang) dalam ulasan pengguna game Genshin Impact di Google Play. Dengan menggunakan teknik text mining dan analisis data, proyek ini akan menggali pola-pola umum dalam ulasan untuk memberikan wawasan bagi pengembang terkait area yang perlu diperbaiki dan aspek yang disukai pengguna.
+
+### Permasalahan:
+Game mobile, termasuk Genshin Impact, sering menerima ulasan dengan rentang rating yang bervariasi, namun pengembang sering kali kesulitan memahami secara rinci alasan spesifik di balik rating rendah atau tinggi. Ulasan pengguna bisa berisi berbagai topik, mulai dari keluhan teknis hingga pujian tentang gameplay.
+
+### Tujuan:
+- Mengidentifikasi faktor-faktor utama yang mempengaruhi pengguna memberikan rating rendah atau tinggi berdasarkan isi ulasan (snippet).
+- Memberikan rekomendasi kepada pengembang tentang fitur atau aspek game yang perlu diperbaiki dan apa yang dihargai oleh pengguna.
 
 ## Alur Kerja Proyek
 
@@ -149,7 +163,7 @@ print(confusion_matrix(y_test, y_pred))
 
 ## Persyaratan
 
-Berikut adalah daftar pustaka yang diperlukan untuk menjalankan proyek ini:
+Berikut adalah daftar pustaka yang diperlukan untuk menjalankan proyek ini. Untuk menginstal semua pustaka secara otomatis, silakan jalankan perintah `pip install -r requirements.txt` di terminal.
 
 ```
 pandas
@@ -164,10 +178,11 @@ serpapi
 python-dotenv
 ```
 
+
 ## Cara Menjalankan
 
 ### 1. Mengumpulkan Data
-   - Pastikan Anda sudah memiliki file `.env` dengan kunci API SerpApi Anda.
+   - Pastikan sudah memiliki file `.env` dengan kunci API SerpApi.
    - Jalankan `serpapi-data.py` untuk mengunduh data ulasan dan menyimpannya dalam file CSV.
 
 ### 2. Pra-Pemrosesan Data
@@ -176,4 +191,45 @@ python-dotenv
 ### 3. Analisis Data
    - Jalankan `analysis.ipynb` untuk melakukan analisis sentimen menggunakan model SVM dan mengevaluasi kinerjanya.
 
----
+
+## Penjelasan Dataset
+
+Dataset yang digunakan dalam proyek ini terdiri dari ulasan pengguna untuk game "Genshin Impact" yang diambil dari Google Play Store. Dataset ini mencakup beberapa informasi penting, seperti:
+
+- **id**: ID unik untuk setiap ulasan.
+- **title**: Nama pengguna atau judul ulasan.
+- **avatar**: URL gambar avatar pengguna.
+- **rating**: Skor rating yang diberikan oleh pengguna (dalam rentang 1-5).
+- **snippet**: Isi dari ulasan pengguna, yang berisi opini atau feedback terkait aplikasi.
+- **likes**: Jumlah suka (likes) yang diterima ulasan.
+- **date**: Tanggal ulasan diposting.
+- **iso_date**: Tanggal dalam format ISO 8601 (waktu standar internasional).
+- **response**: Respons dari Developer terhadap ulasan (dalam dataset ini sebagian besar kosong).
+
+## EDA dan Proses Features Dataset
+
+1. **Exploratory Data Analysis (EDA)**:
+   - Analisis distribusi rating pengguna (rating rendah dan tinggi).
+   - Visualisasi dan pembersihan teks ulasan untuk persiapan analisis lebih lanjut.
+
+2. **Proses Features**:
+   - Ekstraksi fitur menggunakan teknik TF-IDF untuk mengubah teks ulasan menjadi vektor numerik.
+   - Klasifikasi rating berdasarkan teks ulasan (positif dan negatif).
+
+## Proses Learning / Modeling
+
+1. **Modeling**: 
+   - Menggunakan model Support Vector Machine (SVM) untuk klasifikasi sentimen ulasan.
+   - Model dilatih dengan data yang sudah diproses (dengan penyeimbangan kelas menggunakan ADASYN).
+
+2. **Evaluasi Model**:
+   - Menggunakan metrik evaluasi seperti akurasi, F1-score, dan matriks kebingungan untuk menilai kinerja model.
+
+## Performa Model
+
+Model SVM yang diterapkan berhasil memberikan evaluasi yang baik dengan skor akurasi yang memadai dan F1-score yang tinggi, menunjukkan bahwa model mampu membedakan ulasan dengan rating rendah dan tinggi dengan baik. Hasilnya bisa dilihat pada file `pre-process-data.ipynb`.
+
+## Diskusi Hasil dan Kesimpulan
+
+- Hasil model menunjukkan bahwa ulasan dengan rating rendah sering kali mencakup keluhan teknis dan pengalaman buruk dengan gameplay, sementara ulasan dengan rating tinggi lebih fokus pada aspek positif seperti desain grafis, gameplay, dan pengalaman pengguna secara keseluruhan.
+- Developer dapat memanfaatkan wawasan ini untuk meningkatkan kualitas fitur yang lebih dihargai pengguna dan memperbaiki area yang sering dikeluhkan.
