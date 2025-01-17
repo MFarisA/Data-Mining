@@ -10,7 +10,7 @@ st.title('Analisis Sentimen Ulasan Pengguna Game Genshin Impact')
 
 # Memuat data
 st.write("Memuat dataset...")
-df = pd.read_csv('data/new-changedData/google-play-rev-gen-2-TF_IDF-enhanced.csv')  # Ganti path sesuai kebutuhan
+df = pd.read_csv('data/new-changedData/balanced-google-play-rev-gen-2.csv')  # Ganti path sesuai kebutuhan
 st.write(df.head())
 
 # Preprocessing Data (misalnya)
