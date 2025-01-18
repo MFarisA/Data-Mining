@@ -17,9 +17,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 from sklearn.preprocessing import StandardScaler
+from spacy.cli import download
 
-# Load spaCy model
-nlp = spacy.load('en_core_web_sm')
+# Function to download spaCy model if not available
+def download_spacy_model(model_name):
+    try:
+        # Try loading the model
+        nlp = spacy.load(model_name)
+    except OSError:
+        # If the model is not found, download it
+        download(model_name)
+        nlp = spacy.load(model_name)
+    return nlp
+
+# Load spaCy model (with check and download if needed)
+nlp = download_spacy_model('en_core_web_sm')
 
 # Function to clean text
 def clean_text(text):
@@ -213,7 +225,7 @@ def display_datasets():
 
 # Streamlit UI
 def main():
-    st.title('Sentiment Analysis of Google Play Store Reviews')
+    st.title('A Comparative Analysis of Positive and Negative User Reviews for Genshin Impact on Google Play Store')
 
     st.sidebar.title('Options')
     options = st.sidebar.radio("Select an option:", ["View Data", "Generate Word Cloud", "Train & Evaluate Model", "TF-IDF Analysis", "View Datasets"])
