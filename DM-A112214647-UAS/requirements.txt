@@ -9,3 +9,4 @@ wordcloud
 serpapi
 python-dotenv
 streamlit
+en-core-web-sm
