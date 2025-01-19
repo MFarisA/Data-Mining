@@ -1,7 +1,9 @@
 ## Nama : Muhammad Faris Assami
 ## NIM  : A11.2022.14647
-## Kelas: A11-4504
-
+## Kelas: Data Mining-A11-4504
+---
+### https://data-mining-9esxueiphlm9yj3tt3uqvf.streamlit.app/
+---
 # Proyek Analisis Penyebab Rating Rendah dan Tinggi pada Ulasan Pengguna Game Genshin Impact di Google Play Store
 
 **Judul Proyek**: Analisis Penyebab Rating Rendah dan Tinggi pada Ulasan Pengguna Game Genshin Impact di Google Play Store
